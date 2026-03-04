@@ -1,0 +1,295 @@
+:root {
+--bg:#050507;
+--panel:#0e0c16;
+--lilac:#b388ff;
+--lilac-soft:#8e6cff;
+--border:rgba(255,255,255,0.08);
+--glass:rgba(255,255,255,0.05);
+--text:#f2f2f7;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,system-ui;
+}
+
+body{
+background:radial-gradient(circle at top,#2c1f4a,#050507);
+color:var(--text);
+height:100vh;
+}
+
+/* =====================
+   LAYOUT
+===================== */
+
+.dashboard{
+display:flex;
+height:100vh;
+}
+
+/* =====================
+   SIDEBAR
+===================== */
+
+.sidebar{
+width:240px;
+background:var(--panel);
+padding:25px;
+border-right:1px solid var(--border);
+}
+
+.logo{
+color:var(--lilac);
+font-size:20px;
+margin-bottom:30px;
+font-weight:600;
+}
+
+.sidebar nav a{
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px;
+border-radius:12px;
+color:#aaa;
+margin-bottom:8px;
+cursor:pointer;
+transition:.25s;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover{
+background:var(--glass);
+color:var(--lilac);
+transform:translateX(4px);
+}
+
+/* =====================
+   MAIN
+===================== */
+
+.main{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+border-bottom:1px solid var(--border);
+}
+
+/* =====================
+   BEAUTIFUL BUTTON SYSTEM
+===================== */
+
+button{
+border:none;
+border-radius:12px;
+padding:10px 18px;
+font-weight:600;
+cursor:pointer;
+transition:
+transform .18s ease,
+box-shadow .25s ease,
+background .25s ease,
+opacity .2s;
+}
+
+/* PRIMARY BUTTON */
+
+#addBtn,
+#saveBtn{
+background:linear-gradient(
+135deg,
+#8e6cff,
+#b388ff 60%,
+#d6bfff
+);
+color:white;
+
+box-shadow:
+0 4px 18px rgba(179,136,255,.35);
+}
+
+#addBtn:hover,
+#saveBtn:hover{
+transform:translateY(-2px);
+box-shadow:
+0 8px 28px rgba(179,136,255,.55);
+}
+
+#addBtn:active,
+#saveBtn:active{
+transform:scale(.97);
+}
+
+/* CANCEL BUTTON */
+
+#cancelBtn{
+background:rgba(255,255,255,0.06);
+color:#ccc;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+#cancelBtn:hover{
+background:rgba(255,255,255,0.12);
+color:white;
+}
+
+/* DELETE BUTTON */
+
+.item button{
+background:rgba(255,80,120,0.08);
+color:#ff7aa2;
+padding:8px 12px;
+}
+
+.item button:hover{
+background:rgba(255,80,120,0.18);
+box-shadow:0 0 12px rgba(255,80,120,.4);
+}
+
+/* ICON SPACING */
+
+button i{
+margin-right:6px;
+}
+
+/* FOCUS ACCESSIBILITY */
+
+button:focus-visible{
+outline:2px solid var(--lilac);
+outline-offset:2px;
+}
+
+/* =====================
+   PAGES
+===================== */
+
+.page{
+display:none;
+padding:25px;
+}
+
+.page.active{
+display:block;
+}
+
+/* =====================
+   CARDS
+===================== */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.card{
+background:var(--glass);
+padding:25px;
+border-radius:14px;
+border:1px solid var(--border);
+backdrop-filter:blur(10px);
+transition:.25s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 0 25px rgba(179,136,255,.25);
+}
+
+/* =====================
+   ITEMS
+===================== */
+
+.item{
+background:var(--glass);
+padding:15px;
+border-radius:12px;
+border:1px solid var(--border);
+margin-bottom:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+transition:.2s;
+}
+
+.item:hover{
+background:rgba(255,255,255,0.08);
+}
+
+/* =====================
+   MODAL
+===================== */
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+display:flex;
+justify-content:center;
+align-items:center;
+backdrop-filter:blur(8px);
+}
+
+.hidden{
+display:none;
+}
+
+.modal-content{
+background:#14101f;
+padding:25px;
+border-radius:16px;
+width:320px;
+display:flex;
+flex-direction:column;
+gap:12px;
+border:1px solid var(--border);
+box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+/* INPUTS */
+
+.modal-content input{
+padding:10px;
+border-radius:10px;
+border:none;
+background:#201a33;
+color:white;
+transition:.2s;
+}
+
+.modal-content input:focus{
+outline:none;
+box-shadow:0 0 0 2px var(--lilac-soft);
+}
+
+/* MODAL BUTTON AREA */
+
+.modal-actions{
+display:flex;
+justify-content:flex-end;
+gap:12px;
+margin-top:10px;
+}
+
+/* =====================
+   SCROLLBAR
+===================== */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:var(--lilac-soft);
+border-radius:10px;
+}

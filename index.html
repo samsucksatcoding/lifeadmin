@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Life Admin Dashboard</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<aside class="sidebar">
+<div class="logo"><i class="fa-solid fa-shield-heart"></i> Life Admin</div>
+
+<nav>
+<a class="active" data-page="dashboard"><i class="fa-solid fa-house"></i> Overview</a>
+<a data-page="documents"><i class="fa-solid fa-folder"></i> Documents</a>
+<a data-page="subscriptions"><i class="fa-solid fa-credit-card"></i> Subscriptions</a>
+<a data-page="vehicles"><i class="fa-solid fa-car"></i> Vehicles</a>
+<a data-page="medical"><i class="fa-solid fa-heart-pulse"></i> Medical</a>
+<a data-page="reminders"><i class="fa-solid fa-bell"></i> Reminders</a>
+</nav>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+<h2 id="pageTitle">Overview</h2>
+<button id="addBtn"><i class="fa-solid fa-plus"></i> Add Item</button>
+</header>
+
+<section id="dashboard" class="page active">
+<div class="cards">
+<div class="card"><h3>Documents</h3><p id="docCount">0</p></div>
+<div class="card"><h3>Subscriptions</h3><p id="subCount">0</p></div>
+<div class="card"><h3>Reminders</h3><p id="reminderCount">0</p></div>
+</div>
+</section>
+
+<section id="documents" class="page"></section>
+<section id="subscriptions" class="page"></section>
+<section id="vehicles" class="page"></section>
+<section id="medical" class="page"></section>
+<section id="reminders" class="page"></section>
+
+</main>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden">
+<div class="modal-content">
+<h3>Add Item</h3>
+<input id="titleInput" placeholder="Title">
+<input id="expiryInput" type="date">
+<input id="fileInput" type="file">
+<div class="modal-actions">
+<button id="saveBtn">Save</button>
+<button id="cancelBtn">Cancel</button>
+</div>
+</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
